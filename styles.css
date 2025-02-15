@@ -20,29 +20,50 @@ body {
     background-color: #222;
     color: #fff;
     padding: 10px 20px;
+    position: relative;
 }
+
 .navbar .logo {
     font-size: 1.5rem;
     font-weight: bold;
-    white-space: nowrap; /* Evita que se corte el texto de la logo */
-    transform: translateX(-140px); /* Mueve el logo 20px hacia la izquierda */
+    white-space: nowrap;
 }
+
 .navbar .icono {
     height: 30px;
     width: 30px;
-    margin-left: 15x;
+    margin-left: 15px;
 }
 
+/* Ícono de hamburguesa (tres barras) */
+.menu-icon {
+    display: none; /* Ocultamos el ícono en pantallas grandes */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Enlaces del menú */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
-    flex-wrap: nowrap; /* Evita que se apilen */
-    overflow-x: auto; /* Permite que el contenido se desplace horizontalmente si es necesario */
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .nav-links li {
-    flex-shrink: 0; /* Previene que los enlaces se reduzcan demasiado */
+    flex-shrink: 0;
 }
 
 .nav-links li a {
@@ -121,6 +142,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .news-item .read-more {
     display: inline-block;
     margin-top: 10px;
@@ -165,13 +187,30 @@ footer {
     }
 
     .nav-links {
-        justify-content: flex-end;
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Añade scroll horizontal si es necesario */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #222;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .menu-icon {
+        display: flex;
     }
 
     .nav-links li a {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .hero h1 {

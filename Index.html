@@ -10,8 +10,16 @@
 <body>
     <!-- Menú de navegación -->
     <nav class="navbar">
-        <img src="img/Prueba.png" class="icono"> </img> 
+        <img src="img/Prueba.png" class="icono"> </img>
         <div class="logo">Gossip News</div>
+
+        <!-- Ícono de hamburguesa -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="GossipNews.html">Mundo</a></li>
@@ -20,7 +28,6 @@
             <li><a href="GossipNews03.html">Contacto</a></li>
         </ul>
     </nav>
-
     <!-- Contenido principal -->
     <main>
         <section class="hero">
@@ -42,8 +49,7 @@
             <div class="news-item">
                 <img src="Img/España.webp" alt="Noticia 1">
                 <h3>Debate en el Congreso de España</h3>
-                <p>Debate en el Congreso de España sobre decretos económicos
-El Congreso de los Diputados enfrenta una jornada clave con la convalidación de tres importantes decretos económicos presentados por el Gobierno</p>
+                <p>Debate en el Congreso de España sobre decretos económicos. El Congreso de los Diputados enfrenta una jornada clave con la convalidación de tres importantes decretos económicos presentados por el Gobierno.</p>
                 <a href="#" class="read-more">Leer más</a>
             </div>
             <div class="news-item">
@@ -63,5 +69,8 @@ El Congreso de los Diputados enfrenta una jornada clave con la convalidación de
     <footer>
         <p>&copy; 2025 Gossip News. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Vincula el archivo JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>

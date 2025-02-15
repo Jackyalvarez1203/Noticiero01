@@ -8,19 +8,25 @@
     <link rel="icon" href="img/Prueba.png">
 </head>
 <body>
-    <!-- Menú de navegación -->
-    <nav class="navbar">
-        <img src="img/Prueba.png" class="icono"> </img> 
-        <div class="logo">Gossip News</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="GossipNews.html">Mundo</a></li>
-            <li><a href="GossipNews01.html">Política</a></li>
-            <li><a href="GossipNews02.html">Deportes</a></li>
-            <li><a href="GossipNews03.html">Contacto</a></li>
-        </ul>
-    </nav>
+        <!-- Menú de navegación -->
+        <nav class="navbar">
+            <img src="img/Prueba.png" class="icono"> </img>
+            <div class="logo">Gossip News</div>
+   <!-- Ícono de hamburguesa -->
+   <div class="menu-icon" onclick="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+</div>
 
+<ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="GossipNews.html">Mundo</a></li>
+    <li><a href="GossipNews01.html">Política</a></li>
+    <li><a href="GossipNews02.html">Deportes</a></li>
+    <li><a href="GossipNews03.html">Contacto</a></li>
+</ul>
+</nav>
     <!-- Contenido principal -->
     <main>
         <section class="hero">
@@ -62,5 +68,7 @@
     <footer>
         <p>&copy; 2025 Gossip News. Todos los derechos reservados.</p>
     </footer>
+        <!-- Vincula el archivo JavaScript -->
+        <script src="script.js"></script>
 </body>
 </html>
