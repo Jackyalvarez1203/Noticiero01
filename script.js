@@ -1,5 +1,4 @@
-// Función para activar o desactivar el menú
 function toggleMenu() {
-    const menu = document.querySelector('.nav-links');
-    menu.classList.toggle('active');
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
 }

@@ -22,6 +22,17 @@ body {
     padding: 10px 20px;
     position: relative;
 }
+/* Ocultamos el logo "Gossip News" por defecto */
+.nav-links .logo-item {
+    display: none;
+}
+
+/* Cuando el menú está activo, mostramos el logo */
+.nav-links.active .logo-item {
+    display: block;
+}
+
+/* Ajuste en el resto del menú, que sigue igual */
 
 .navbar .logo {
     font-size: 1.5rem;

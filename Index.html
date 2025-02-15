@@ -8,26 +8,29 @@
     <link rel="icon" href="img/Prueba.png">
 </head>
 <body>
-    <!-- Menú de navegación -->
-    <nav class="navbar">
-        <img src="img/Prueba.png" class="icono"> </img>
-        <div class="logo">Gossip News</div>
+<!-- Menú de navegación -->
+<nav class="navbar">
+    <!-- Logo fuera del menú desplegable -->
+    <img src="img/Prueba.png" class="icono"> </img>
+    <div class="logo">Gossip News</div>
 
-        <!-- Ícono de hamburguesa -->
-        <div class="menu-icon" onclick="toggleMenu()">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
+    <!-- Ícono de hamburguesa -->
+    <div class="menu-icon" onclick="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
 
-        <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="GossipNews.html">Mundo</a></li>
-            <li><a href="GossipNews01.html">Política</a></li>
-            <li><a href="GossipNews02.html">Deportes</a></li>
-            <li><a href="GossipNews03.html">Contacto</a></li>
-        </ul>
-    </nav>
+    <ul class="nav-links">
+        <!-- Este logo solo estará dentro de la lista y se ocultará cuando el menú esté cerrado en pantallas pequeñas -->
+        <li class="logo-item"><img src="Img/Prueba.png" class="icono"> <b>Gossip News</b></li> 
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="GossipNews.html">Mundo</a></li>
+        <li><a href="GossipNews01.html">Política</a></li>
+        <li><a href="GossipNews02.html">Deportes</a></li>
+        <li><a href="GossipNews03.html">Contacto</a></li>
+    </ul>
+</nav>
     <!-- Contenido principal -->
     <main>
         <section class="hero">
