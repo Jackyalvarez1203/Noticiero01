@@ -31,15 +31,21 @@ body {
 .nav-links.active .logo-item {
     display: block;
 }
+@font-face {
+    font-family: 'NYT Imperial';
+    src: url('fonts/NYT_Imperial.woff2') format('woff2'),
+         url('fonts/NYT_Imperial.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-/* Ajuste en el resto del menú, que sigue igual */
-
+/* Menú de navegación */
 .navbar .logo {
-    font-size: 1.5rem;
+    font-family: 'NYT Imperial', serif;
+    font-size: 2.5rem;
     font-weight: bold;
     white-space: nowrap;
 }
-
 .navbar .icono {
     height: 30px;
     width: 30px;
