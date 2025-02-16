@@ -202,24 +202,45 @@ footer {
 /* Media queries para ajustar el diseño */
 @media (max-width: 768px) {
     .navbar {
-        flex-wrap: nowrap;
+        flex-wrap: wrap; /* Cambia la dirección de la barra de navegación para apilar elementos */
         justify-content: space-between;
     }
 
     /* Contenedor del logo y menú */
     .left-side {
         flex-grow: 1;
-        justify-content: space-between;
-        width: auto;
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 10px; /* Espacio entre el logo y el menú */
     }
 
     /* Ajustar el logo en móviles */
     .logo {
-        font-size: 1.8rem; /* Reducimos el tamaño del logo */
-        white-space: normal; /* Permitir salto de línea si es necesario */
+        font-size: 1.5rem; /* Reducimos el tamaño del logo para que sea más adecuado para móviles */
         text-align: center;
+        white-space: normal; /* Permitimos el salto de línea si es necesario */
+        margin-left: 0;
     }
 
+    /* Ajustamos el icono de hamburguesa para que se vea más pequeño */
+    .menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 25px; /* Reducimos el tamaño del icono */
+        height: 18px;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 20px; /* Reducimos el tamaño de las barras */
+        height: 2px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    /* Ocultamos el menú por defecto en móviles */
     .nav-links {
         position: absolute;
         top: 60px;
@@ -232,36 +253,47 @@ footer {
         align-items: center;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
+        padding: 10px 0;
     }
 
     .nav-links.active {
         transform: translateX(0);
     }
 
-    /* Mostrar icono de menú en pantallas pequeñas */
-    .menu-icon {
-        display: flex;
+    /* Ajustamos los enlaces del menú */
+    .nav-links li {
+        margin: 5px 0; /* Aumentamos el espacio entre enlaces */
     }
 
-    /* Asegurar que el menú sea legible */
     .nav-links li a {
-        font-size: 1.2rem;
-        padding: 10px;
+        font-size: 1rem; /* Reducimos el tamaño de la fuente */
+        padding: 10px 20px; /* Aumentamos el padding para que los enlaces sean más grandes */
+    }
+
+    .nav-links li a:hover {
+        text-decoration: none; /* Quitamos el subrayado en hover */
     }
 
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 1.8rem; /* Ajustamos el tamaño del encabezado */
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1rem; /* Ajustamos el tamaño del texto */
     }
 
     .featured h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem; /* Ajustamos el tamaño del título del artículo destacado */
     }
 
+    /* Ajustamos la grid de noticias */
     .news-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Hacemos que las noticias estén en una sola columna */
+        padding: 10px;
+    }
+
+    /* Aseguramos que el footer se vea correctamente */
+    footer {
+        font-size: 0.9rem;
     }
 }
