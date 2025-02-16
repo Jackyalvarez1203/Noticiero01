@@ -17,16 +17,17 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     </head>
 </head>
 <body>
-<!-- Menú de navegación -->
+
 <nav class="navbar">
-    <!-- Logo fuera del menú desplegable -->
+
     <img src="img/Prueba.png" class="icono"> </img>
     <div class="logo">Gossip News</div>
 
-    <!-- Ícono de hamburguesa -->
     <div class="menu-icon" onclick="toggleMenu()">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -34,23 +35,22 @@
     </div>
 
     <ul class="nav-links">
-        <!-- Este logo solo estará dentro de la lista y se ocultará cuando el menú esté cerrado en pantallas pequeñas -->
-
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="GossipNews.html">Mundo</a></li>
-        <li><a href="GossipNews01.html">Política</a></li>
-        <li><a href="GossipNews02.html">Deportes</a></li>
-        <li><a href="GossipNews03.html">Contacto</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a href="GossipNews.html"><i class="fas fa-globe"></i> Mundo</a></li>
+        <li><a href="GossipNews01.html"><i class="fas fa-landmark"></i> Política</a></li>
+        <li><a href="GossipNews02.html"><i class="fas fa-futbol"></i> Deportes</a></li>
+        <li><a href="GossipNews03.html"><i class="fas fa-phone-alt"></i> Contacto</a></li>
     </ul>
+    
 </nav>
-    <!-- Contenido principal -->
+
     <main>
         <section class="hero">
             <h1>Últimas Noticias</h1>
             <p>“El chisme es nuestro mejor amigo”</p>
         </section>
 
-        <!-- Artículo destacado -->
+
         <article class="featured">
             <img src="Imagen" alt="Imagen destacada">
             <h2>Noticia principal</h2>
@@ -59,7 +59,6 @@
             <a href="GossipNews.html" class="read-more">Leer más</a>
         </article>
 
-        <!-- Noticias adicionales -->
         <section class="news-grid">
             <div class="news-item">
                 <img src="Imagen" alt="Noticia 1">
@@ -80,11 +79,10 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Gossip News. Todos los derechos reservados.</p>
     </footer>
-        <!-- Vincula el archivo JavaScript -->
+
         <script src="script.js"></script>
 </body>
 </html>

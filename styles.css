@@ -1,4 +1,3 @@
-/* Reset general */
 * {
     margin: 0;
     padding: 0;
@@ -12,10 +11,9 @@ body {
     color: #333;
 }
 
-/* Ajusta el contenedor de la barra de navegación */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Espacio entre el logo + icono y las opciones del menú */
+    justify-content: space-between; 
     align-items: center;
     background-color: #222;
     color: #fff;
@@ -23,28 +21,27 @@ body {
     position: relative;
 }
 
-/* Contenedor para el ícono y el logo */
 .navbar .left-side {
     display: flex;
-    align-items: center;  /* Alinea verticalmente el ícono y el logo */
-    gap: 10px; /* Espacio entre el ícono y el texto "Gossip News" */
-    justify-content: flex-start; /* Empuja los elementos hacia la izquierda */
-    flex-grow: 1; /* Asegura que este contenedor ocupe todo el espacio disponible a la izquierda */
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-start;
+    flex-grow: 1;
 }
 
-/* Estilos del ícono */
 .navbar .icono {
     height: 45px; 
     width: 45px;
-    margin-bottom: 2px;  /* Espacio de 10px desde la parte inferior */
+    margin-bottom: 2px; 
 }
+
 .navbar .logo {
-    font-family: "Playfair Display", "Times New Roman", serif; /* Usamos Playfair Display */
-    font-size: 2rem; /* Tamaño grande para el logo */
-    font-weight: bold; /* Negrita */
-    letter-spacing: 2px; /* Espaciado entre las letras */
-    text-transform: uppercase; /* Texto en mayúsculas */
-    white-space: nowrap; /* Evitar salto de línea */
+    font-family: "Playfair Display", "Times New Roman", serif; 
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    white-space: nowrap;
     margin-left: 0;
 }
 
@@ -52,14 +49,12 @@ body {
     display: none;
 }
 
-/* Cuando el menú está activo, mostramos el logo */
 .nav-links.active .logo-item {
     display: block;
 }
 
-/* Ícono de hamburguesa (tres barras) */
 .menu-icon {
-    display: none; /* Ocultamos el ícono en pantallas grandes */
+    display: none; 
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -75,11 +70,10 @@ body {
     border-radius: 5px;
 }
 
-/* Enlaces del menú */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 15px;
+    gap: 5px;
     flex-wrap: nowrap;
     overflow-x: auto;
 }
@@ -87,15 +81,18 @@ body {
 .nav-links li {
     flex-shrink: 0;
 }
-/* Estilo para el menú */
+
 .navbar .nav-links li a {
-    font-family: "Lato", sans-serif; /* Usamos Lato */
+    font-family: "Lato", sans-serif; 
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
     padding: 10px 15px;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;  
 }
 
 .navbar .nav-links li a:hover {
@@ -103,41 +100,40 @@ body {
     text-decoration: underline;
 }
 
-/* Hero section */
-.hero {
-    text-align: center;
-    padding: 60px 20px; /* Espaciado ajustado para dar más espacio en pantallas grandes */
-    background-color: #222; /* Fondo oscuro */
-    color: #fff; /* Color de texto blanco para contraste */
-    background-image: url('ruta-a-tu-imagen-de-fondo.jpg'); /* Puedes agregar una imagen de fondo si deseas */
-    background-size: cover; /* La imagen cubrirá toda el área */
-    background-position: center;
-    border-bottom: 5px solid #333; /* Línea sutil al final de la sección */
+.nav-links li a .fa {
+    font-size: 1.2rem;  
 }
 
-/* Título principal */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #222;
+    color: #fff;
+    background-image: url('ruta-a-tu-imagen-de-fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 5px solid #333;
+}
+
 .hero h1 {
-    font-family: "Playfair Display", serif; /* Usamos Playfair Display para el título */
-    font-size: 3.5rem; /* Tamaño grande para el título */
+    font-family: "Playfair Display", serif;
+    font-size: 3.5rem;
     font-weight: bold;
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px; /* Espaciado entre las letras para un toque elegante */
+    letter-spacing: 2px;
 }
 
-/* Subtítulo o cita */
 .hero p {
-    font-family: "Merriweather", serif; /* Usamos Merriweather para el subtítulo */
+    font-family: "Merriweather", serif;
     font-size: 1.5rem;
     font-style: italic;
-    color: #ccc; /* Color gris suave para la cita */
+    color: #ccc;
     line-height: 1.8;
     max-width: 800px;
     margin: 0 auto;
 }
 
-
-/* Artículo destacado */
 .featured {
     margin: 20px auto;
     max-width: 800px;
@@ -148,39 +144,34 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Imagen del artículo */
 .featured img {
     width: 100%;
     border-radius: 8px;
 }
 
-/* Título del artículo */
 .featured h2 {
-    font-family: "Merriweather", serif; /* Usamos Merriweather para el título */
+    font-family: "Merriweather", serif;
     font-size: 2rem;
     font-weight: bold;
     margin: 15px 0;
-    color: #333; /* Color oscuro para el texto */
+    color: #333;
 }
 
-/* Fecha de publicación */
 .featured p:first-of-type {
-    font-family: "Roboto", sans-serif; /* Usamos Roboto para la fecha */
+    font-family: "Roboto", sans-serif;
     font-size: 1rem;
-    color: #777; /* Color gris para la fecha */
+    color: #777;
     margin-bottom: 10px;
 }
 
-/* Resumen breve */
 .featured p:nth-of-type(2) {
-    font-family: "Merriweather", serif; /* Usamos Merriweather para el resumen */
+    font-family: "Merriweather", serif;
     font-size: 1.1rem;
-    color: #555; /* Color gris más oscuro */
+    color: #555;
     line-height: 1.7;
     margin-bottom: 15px;
 }
 
-/* Enlace "Leer más" */
 .featured .read-more {
     display: inline-block;
     margin-top: 10px;
@@ -194,7 +185,7 @@ body {
 .featured .read-more:hover {
     background-color: #555;
 }
-/* Noticias adicionales */
+
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -228,23 +219,22 @@ body {
     border-radius: 8px;
     margin-bottom: 10px;
 }
-/* Estilo para las noticias */
+
 .news-item p {
-    font-family: "Georgia", serif; /* Usamos Georgia para el texto */
-    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
-    line-height: 1.7; /* Mejor espaciado entre líneas para mayor legibilidad */
+    font-family: "Georgia", serif;
+    font-size: 1.1rem;
+    line-height: 1.7;
     color: #333;
     margin-bottom: 15px;
 }
 
 .news-item h3 {
-    font-family: "Georgia", serif; /* Usamos Georgia para los títulos */
-    font-size: 1.6rem; /* Títulos de noticias más prominentes */
+    font-family: "Georgia", serif;
+    font-size: 1.6rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* Footer */
 footer {
     text-align: center;
     margin-top: 20px;
@@ -253,14 +243,12 @@ footer {
     color: #fff;
 }
 
-/* Media queries para ajustar el diseño */
 @media (max-width: 768px) {
     .navbar {
-        justify-content: space-between; /* Alineamos todo a la izquierda y derecha */
+        justify-content: space-between;
         padding: 10px 15px;
     }
 
-    /* Contenedor para el logo */
     .left-side {
         display: flex;
         align-items: center;
@@ -268,71 +256,66 @@ footer {
         flex-grow: 1;
     }
 
-    /* Estilo para el logo, más pequeño */
     .logo {
-        font-size: 1.5rem; /* Reducimos el tamaño del logo */
+        font-size: 1.5rem;
         font-weight: bold;
         white-space: nowrap;
         margin-left: 0;
         text-align: left;
     }
 
-    /* Ícono de hamburguesa - se posiciona a la derecha */
     .menu-icon {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        width: 22px; /* Hacemos el icono más pequeño */
+        width: 22px;
         height: 18px;
         cursor: pointer;
     }
 
     .bar {
-        width: 20px; /* Reducimos las barras */
+        width: 20px;
         height: 3px;
         background-color: #fff;
         border-radius: 5px;
     }
 
-    /* Menú oculto por defecto */
     .nav-links {
-        position: fixed; /* Fijamos el menú en el lado izquierdo */
+        position: fixed;
         top: 0;
-        left: -250px; /* Lo dejamos fuera de la pantalla por defecto */
-        height: 100%; /* Ocupa toda la altura */
-        width: 250px; /* Ancho fijo para el menú */
+        left: -250px;
+        height: 100%;
+        width: 250px;
         background-color: #222;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transition: 0.3s ease; /* Transición suave */
+        transition: 0.3s ease;
         padding: 20px 0;
     }
 
     .nav-links.active {
-        left: 0; /* El menú se desliza desde la izquierda */
+        left: 0;
     }
 
-    /* Ajustamos el estilo de los enlaces del menú */
     .nav-links li {
-        margin: 15px 0; /* Espacio entre los enlaces */
+        margin: 15px 0;
     }
 
     .nav-links li a {
-        font-size: 0.9rem; /* Fuente más pequeña, como en YouTube */
+        font-size: 0.9rem;
         padding: 10px 20px;
         color: #fff;
         text-decoration: none;
     }
 
     .nav-links li a:hover {
-        background-color: #444; /* Cambia el color de fondo en hover */
-        text-decoration: none; /* Eliminamos el subrayado */
+        background-color: #444;
+        text-decoration: none;
     }
 
-    /* Aseguramos que el texto de la hero section también sea más pequeño */
     .hero h1 {
         font-size: 1.8rem;
         margin-bottom: 10px;
@@ -343,18 +326,15 @@ footer {
         color: #555;
     }
 
-    /* Artículo destacado */
     .featured h2 {
-        font-size: 1.4rem; /* Reducción de tamaño */
+        font-size: 1.4rem;
     }
 
-    /* Ajuste de las noticias en la grid */
     .news-grid {
-        grid-template-columns: 1fr; /* Hacemos que las noticias estén en una sola columna */
+        grid-template-columns: 1fr;
         padding: 10px;
     }
 
-    /* Ajustamos el footer */
     footer {
         font-size: 0.8rem;
     }
