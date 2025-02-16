@@ -202,98 +202,106 @@ footer {
 /* Media queries para ajustar el diseño */
 @media (max-width: 768px) {
     .navbar {
-        flex-wrap: wrap; /* Cambia la dirección de la barra de navegación para apilar elementos */
-        justify-content: space-between;
+        justify-content: space-between; /* Alineamos todo a la izquierda y derecha */
+        padding: 10px 15px;
     }
 
-    /* Contenedor del logo y menú */
+    /* Contenedor para el logo */
     .left-side {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         flex-grow: 1;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 10px; /* Espacio entre el logo y el menú */
     }
 
-    /* Ajustar el logo en móviles */
+    /* Estilo para el logo, más pequeño */
     .logo {
-        font-size: 1.5rem; /* Reducimos el tamaño del logo para que sea más adecuado para móviles */
-        text-align: center;
-        white-space: normal; /* Permitimos el salto de línea si es necesario */
+        font-size: 1.5rem; /* Reducimos el tamaño del logo */
+        font-weight: bold;
+        white-space: nowrap;
         margin-left: 0;
+        text-align: left;
     }
 
-    /* Ajustamos el icono de hamburguesa para que se vea más pequeño */
+    /* Ícono de hamburguesa - se posiciona a la derecha */
     .menu-icon {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        width: 25px; /* Reducimos el tamaño del icono */
+        width: 22px; /* Hacemos el icono más pequeño */
         height: 18px;
         cursor: pointer;
     }
 
     .bar {
-        width: 20px; /* Reducimos el tamaño de las barras */
-        height: 2px;
+        width: 20px; /* Reducimos las barras */
+        height: 3px;
         background-color: #fff;
         border-radius: 5px;
     }
 
-    /* Ocultamos el menú por defecto en móviles */
+    /* Menú oculto por defecto */
     .nav-links {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
+        position: fixed; /* Fijamos el menú en el lado izquierdo */
+        top: 0;
+        left: -250px; /* Lo dejamos fuera de la pantalla por defecto */
+        height: 100%; /* Ocupa toda la altura */
+        width: 250px; /* Ancho fijo para el menú */
         background-color: #222;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        padding: 10px 0;
+        transition: 0.3s ease; /* Transición suave */
+        padding: 20px 0;
     }
 
     .nav-links.active {
-        transform: translateX(0);
+        left: 0; /* El menú se desliza desde la izquierda */
     }
 
-    /* Ajustamos los enlaces del menú */
+    /* Ajustamos el estilo de los enlaces del menú */
     .nav-links li {
-        margin: 5px 0; /* Aumentamos el espacio entre enlaces */
+        margin: 15px 0; /* Espacio entre los enlaces */
     }
 
     .nav-links li a {
-        font-size: 1rem; /* Reducimos el tamaño de la fuente */
-        padding: 10px 20px; /* Aumentamos el padding para que los enlaces sean más grandes */
+        font-size: 0.9rem; /* Fuente más pequeña, como en YouTube */
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
     }
 
     .nav-links li a:hover {
-        text-decoration: none; /* Quitamos el subrayado en hover */
+        background-color: #444; /* Cambia el color de fondo en hover */
+        text-decoration: none; /* Eliminamos el subrayado */
     }
 
+    /* Aseguramos que el texto de la hero section también sea más pequeño */
     .hero h1 {
-        font-size: 1.8rem; /* Ajustamos el tamaño del encabezado */
+        font-size: 1.8rem;
+        margin-bottom: 10px;
     }
 
     .hero p {
-        font-size: 1rem; /* Ajustamos el tamaño del texto */
+        font-size: 1rem;
+        color: #555;
     }
 
+    /* Artículo destacado */
     .featured h2 {
-        font-size: 1.4rem; /* Ajustamos el tamaño del título del artículo destacado */
+        font-size: 1.4rem; /* Reducción de tamaño */
     }
 
-    /* Ajustamos la grid de noticias */
+    /* Ajuste de las noticias en la grid */
     .news-grid {
         grid-template-columns: 1fr; /* Hacemos que las noticias estén en una sola columna */
         padding: 10px;
     }
 
-    /* Aseguramos que el footer se vea correctamente */
+    /* Ajustamos el footer */
     footer {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
