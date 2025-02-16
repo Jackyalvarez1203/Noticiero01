@@ -36,8 +36,9 @@ body {
 }
 /* Estilos del logo "Gossip News" */
 /* Estilos del logo "Gossip News" */
+/* Estilos del logo "Gossip News" */
 .navbar .logo {
-    font-family: 'NYT Imperial', serif;
+    font-family: Arial, sans-serif; /* Cambié la fuente a la predeterminada (Arial) */
     font-size: 2.5rem; /* Cambia el tamaño del texto "Gossip News" */
     font-weight: bold;
     white-space: nowrap;
