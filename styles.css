@@ -11,6 +11,7 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+
 /* Ajusta el contenedor de la barra de navegación */
 .navbar {
     display: flex;
@@ -21,6 +22,7 @@ body {
     padding: 10px 20px;
     position: relative;
 }
+
 /* Contenedor para el ícono y el logo */
 .navbar .left-side {
     display: flex;
@@ -29,12 +31,13 @@ body {
     justify-content: flex-start; /* Empuja los elementos hacia la izquierda */
     flex-grow: 1; /* Asegura que este contenedor ocupe todo el espacio disponible a la izquierda */
 }
+
 /* Estilos del ícono */
 .navbar .icono {
     height: 50px; /* Aumenta el tamaño del ícono */
     width: 50px;  /* Aumenta el tamaño del ícono */
 }
-/* Estilos del logo "Gossip News" */
+
 /* Estilos del logo "Gossip News" */
 .navbar .logo {
     font-family: 'NYT Imperial', serif;
@@ -43,6 +46,7 @@ body {
     white-space: nowrap;
     margin-left: 0; /* Asegura que no haya un margen adicional a la izquierda */
 }
+
 /* Ocultamos el logo "Gossip News" por defecto */
 .nav-links .logo-item {
     display: none;
@@ -214,6 +218,15 @@ footer {
         flex-wrap: wrap;
         justify-content: space-between;
         gap: 10px;
+    }
+
+    .left-side {
+        justify-content: flex-start;
+        flex-wrap: nowrap; /* Evitar que se envuelvan los elementos */
+    }
+
+    .logo {
+        font-size: 1.8rem; /* Reducir el tamaño del logo */
     }
 
     .nav-links {
