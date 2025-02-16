@@ -11,16 +11,37 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
-
-/* Menú de navegación */
+/* Ajusta el contenedor de la barra de navegación */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espacio entre el logo + icono y las opciones del menú */
     align-items: center;
     background-color: #222;
     color: #fff;
     padding: 10px 20px;
     position: relative;
+}
+/* Contenedor para el ícono y el logo */
+.navbar .left-side {
+    display: flex;
+    align-items: center;  /* Alinea verticalmente el ícono y el logo */
+    gap: 10px; /* Espacio entre el ícono y el texto "Gossip News" */
+    justify-content: flex-start; /* Empuja los elementos hacia la izquierda */
+    flex-grow: 1; /* Asegura que este contenedor ocupe todo el espacio disponible a la izquierda */
+}
+/* Estilos del ícono */
+.navbar .icono {
+    height: 50px; /* Aumenta el tamaño del ícono */
+    width: 50px;  /* Aumenta el tamaño del ícono */
+}
+/* Estilos del logo "Gossip News" */
+/* Estilos del logo "Gossip News" */
+.navbar .logo {
+    font-family: 'NYT Imperial', serif;
+    font-size: 2.5rem; /* Cambia el tamaño del texto "Gossip News" */
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 0; /* Asegura que no haya un margen adicional a la izquierda */
 }
 /* Ocultamos el logo "Gossip News" por defecto */
 .nav-links .logo-item {
@@ -31,25 +52,18 @@ body {
 .nav-links.active .logo-item {
     display: block;
 }
+
+/* Fuente personalizada */
 @font-face {
-    font-family: 'NYT Imperial';
-    src: url('fonts/NYT_Imperial.woff2') format('woff2'),
-         url('fonts/NYT_Imperial.woff') format('woff');
+    font-family: 'Baskerville';
+    src: url('ruta/a/Baskerville-Regular.woff2') format('woff2'),
+         url('ruta/a/Baskerville-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
-/* Menú de navegación */
-.navbar .logo {
-    font-family: 'NYT Imperial', serif;
-    font-size: 2.5rem;
-    font-weight: bold;
-    white-space: nowrap;
-}
-.navbar .icono {
-    height: 30px;
-    width: 30px;
-    margin-left: 15px;
+body {
+    font-family: 'Baskerville', serif;
 }
 
 /* Ícono de hamburguesa (tres barras) */
@@ -193,7 +207,6 @@ footer {
     background-color: #222;
     color: #fff;
 }
-
 
 /* Media queries para ajustar el diseño */
 @media (max-width: 768px) {
