@@ -12,37 +12,80 @@ body {
     color: #333;
 }
 
-/* Menú de navegación */
+/* Ajusta el contenedor de la barra de navegación */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Espacio entre el logo + icono y las opciones del menú */
     align-items: center;
     background-color: #222;
     color: #fff;
     padding: 10px 20px;
-}
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    white-space: nowrap; /* Evita que se corte el texto de la logo */
-    transform: translateX(-140px); /* Mueve el logo 20px hacia la izquierda */
-}
-.navbar .icono {
-    height: 30px;
-    width: 30px;
-    margin-left: 15x;
+    position: relative;
 }
 
+/* Contenedor para el ícono y el logo */
+.navbar .left-side {
+    display: flex;
+    align-items: center;  /* Alinea verticalmente el ícono y el logo */
+    gap: 10px; /* Espacio entre el ícono y el texto "Gossip News" */
+    justify-content: flex-start; /* Empuja los elementos hacia la izquierda */
+    flex-grow: 1; /* Asegura que este contenedor ocupe todo el espacio disponible a la izquierda */
+}
+
+/* Estilos del ícono */
+.navbar .icono {
+    height: 50px; /* Aumenta el tamaño del ícono */
+    width: 50px;  /* Aumenta el tamaño del ícono */
+}
+
+/* Estilos del logo "Gossip News" */
+.navbar .logo {
+    font-family: Arial, sans-serif; /* Cambié la fuente a la predeterminada (Arial) */
+    font-size: 2.5rem; /* Cambia el tamaño del texto "Gossip News" */
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 0; /* Asegura que no haya un margen adicional a la izquierda */
+}
+
+/* Ocultamos el logo "Gossip News" por defecto */
+.nav-links .logo-item {
+    display: none;
+}
+
+/* Cuando el menú está activo, mostramos el logo */
+.nav-links.active .logo-item {
+    display: block;
+}
+
+/* Ícono de hamburguesa (tres barras) */
+.menu-icon {
+    display: none; /* Ocultamos el ícono en pantallas grandes */
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Enlaces del menú */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 15px;
-    flex-wrap: nowrap; /* Evita que se apilen */
-    overflow-x: auto; /* Permite que el contenido se desplace horizontalmente si es necesario */
+    flex-wrap: nowrap;
+    overflow-x: auto;
 }
 
 .nav-links li {
-    flex-shrink: 0; /* Previene que los enlaces se reduzcan demasiado */
+    flex-shrink: 0;
 }
 
 .nav-links li a {
@@ -121,6 +164,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .news-item .read-more {
     display: inline-block;
     margin-top: 10px;
@@ -155,27 +199,58 @@ footer {
     color: #fff;
 }
 
-
 /* Media queries para ajustar el diseño */
 @media (max-width: 768px) {
     .navbar {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-between;
-        gap: 10px;
+    }
+
+    /* Contenedor del logo y menú */
+    .left-side {
+        flex-grow: 1;
+        justify-content: space-between;
+        width: auto;
+    }
+
+    /* Ajustar el logo en móviles */
+    .logo {
+        font-size: 1.8rem; /* Reducimos el tamaño del logo */
+        white-space: normal; /* Permitir salto de línea si es necesario */
+        text-align: center;
     }
 
     .nav-links {
-        justify-content: flex-end;
-        flex-wrap: nowrap;
-        overflow-x: auto; /* Añade scroll horizontal si es necesario */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #222;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
     }
 
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    /* Mostrar icono de menú en pantallas pequeñas */
+    .menu-icon {
+        display: flex;
+    }
+
+    /* Asegurar que el menú sea legible */
     .nav-links li a {
-        font-size: 0.9rem;
+        font-size: 1.2rem;
+        padding: 10px;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero p {
