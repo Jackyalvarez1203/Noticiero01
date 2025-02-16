@@ -34,20 +34,20 @@ body {
 
 /* Estilos del ícono */
 .navbar .icono {
-    height: 45px; /* Aumenta el tamaño del ícono */
-    width: 45px;  /* Aumenta el tamaño del ícono */
+    height: 45px; 
+    width: 45px;
+    margin-bottom: 2px;  /* Espacio de 10px desde la parte inferior */
 }
-
-/* Estilos del logo "Gossip News" */
 .navbar .logo {
-    font-family: Arial, sans-serif; /* Cambié la fuente a la predeterminada (Arial) */
-    font-size: 2rem; /* Cambia el tamaño del texto "Gossip News" */
-    font-weight: bold;
-    white-space: nowrap;
-    margin-left: 0; /* Asegura que no haya un margen adicional a la izquierda */
+    font-family: "Playfair Display", "Times New Roman", serif; /* Usamos Playfair Display */
+    font-size: 2rem; /* Tamaño grande para el logo */
+    font-weight: bold; /* Negrita */
+    letter-spacing: 2px; /* Espaciado entre las letras */
+    text-transform: uppercase; /* Texto en mayúsculas */
+    white-space: nowrap; /* Evitar salto de línea */
+    margin-left: 0;
 }
 
-/* Ocultamos el logo "Gossip News" por defecto */
 .nav-links .logo-item {
     display: none;
 }
@@ -87,33 +87,55 @@ body {
 .nav-links li {
     flex-shrink: 0;
 }
-
-.nav-links li a {
+/* Estilo para el menú */
+.navbar .nav-links li a {
+    font-family: "Lato", sans-serif; /* Usamos Lato */
+    font-size: 1rem;
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 15px;
+    text-transform: uppercase;
 }
 
-.nav-links li a:hover {
+.navbar .nav-links li a:hover {
+    color: #ddd;
     text-decoration: underline;
 }
 
 /* Hero section */
 .hero {
     text-align: center;
-    padding: 40px 20px;
-    background-color: #e3e3e3;
+    padding: 60px 20px; /* Espaciado ajustado para dar más espacio en pantallas grandes */
+    background-color: #222; /* Fondo oscuro */
+    color: #fff; /* Color de texto blanco para contraste */
+    background-image: url('ruta-a-tu-imagen-de-fondo.jpg'); /* Puedes agregar una imagen de fondo si deseas */
+    background-size: cover; /* La imagen cubrirá toda el área */
+    background-position: center;
+    border-bottom: 5px solid #333; /* Línea sutil al final de la sección */
 }
 
+/* Título principal */
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-family: "Playfair Display", serif; /* Usamos Playfair Display para el título */
+    font-size: 3.5rem; /* Tamaño grande para el título */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaciado entre las letras para un toque elegante */
 }
 
+/* Subtítulo o cita */
 .hero p {
+    font-family: "Merriweather", serif; /* Usamos Merriweather para el subtítulo */
+    font-size: 1.5rem;
     font-style: italic;
-    color: #555;
+    color: #ccc; /* Color gris suave para la cita */
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
 }
+
 
 /* Artículo destacado */
 .featured {
@@ -126,16 +148,39 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Imagen del artículo */
 .featured img {
     width: 100%;
     border-radius: 8px;
 }
 
+/* Título del artículo */
 .featured h2 {
+    font-family: "Merriweather", serif; /* Usamos Merriweather para el título */
     font-size: 2rem;
-    margin: 10px 0;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #333; /* Color oscuro para el texto */
 }
 
+/* Fecha de publicación */
+.featured p:first-of-type {
+    font-family: "Roboto", sans-serif; /* Usamos Roboto para la fecha */
+    font-size: 1rem;
+    color: #777; /* Color gris para la fecha */
+    margin-bottom: 10px;
+}
+
+/* Resumen breve */
+.featured p:nth-of-type(2) {
+    font-family: "Merriweather", serif; /* Usamos Merriweather para el resumen */
+    font-size: 1.1rem;
+    color: #555; /* Color gris más oscuro */
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* Enlace "Leer más" */
 .featured .read-more {
     display: inline-block;
     margin-top: 10px;
@@ -149,7 +194,6 @@ body {
 .featured .read-more:hover {
     background-color: #555;
 }
-
 /* Noticias adicionales */
 .news-grid {
     display: grid;
@@ -184,9 +228,19 @@ body {
     border-radius: 8px;
     margin-bottom: 10px;
 }
+/* Estilo para las noticias */
+.news-item p {
+    font-family: "Georgia", serif; /* Usamos Georgia para el texto */
+    font-size: 1.1rem; /* Tamaño de fuente ligeramente mayor */
+    line-height: 1.7; /* Mejor espaciado entre líneas para mayor legibilidad */
+    color: #333;
+    margin-bottom: 15px;
+}
 
 .news-item h3 {
-    font-size: 1.2rem;
+    font-family: "Georgia", serif; /* Usamos Georgia para los títulos */
+    font-size: 1.6rem; /* Títulos de noticias más prominentes */
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
