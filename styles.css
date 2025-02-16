@@ -11,6 +11,7 @@ body {
     background-color: #f9f9f9;
     color: #333;
 }
+
 /* Ajusta el contenedor de la barra de navegación */
 .navbar {
     display: flex;
@@ -21,6 +22,7 @@ body {
     padding: 10px 20px;
     position: relative;
 }
+
 /* Contenedor para el ícono y el logo */
 .navbar .left-side {
     display: flex;
@@ -29,13 +31,13 @@ body {
     justify-content: flex-start; /* Empuja los elementos hacia la izquierda */
     flex-grow: 1; /* Asegura que este contenedor ocupe todo el espacio disponible a la izquierda */
 }
+
 /* Estilos del ícono */
 .navbar .icono {
     height: 50px; /* Aumenta el tamaño del ícono */
     width: 50px;  /* Aumenta el tamaño del ícono */
 }
-/* Estilos del logo "Gossip News" */
-/* Estilos del logo "Gossip News" */
+
 /* Estilos del logo "Gossip News" */
 .navbar .logo {
     font-family: Arial, sans-serif; /* Cambié la fuente a la predeterminada (Arial) */
@@ -44,6 +46,7 @@ body {
     white-space: nowrap;
     margin-left: 0; /* Asegura que no haya un margen adicional a la izquierda */
 }
+
 /* Ocultamos el logo "Gossip News" por defecto */
 .nav-links .logo-item {
     display: none;
@@ -52,19 +55,6 @@ body {
 /* Cuando el menú está activo, mostramos el logo */
 .nav-links.active .logo-item {
     display: block;
-}
-
-/* Fuente personalizada */
-@font-face {
-    font-family: 'Baskerville';
-    src: url('ruta/a/Baskerville-Regular.woff2') format('woff2'),
-         url('ruta/a/Baskerville-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-body {
-    font-family: 'Baskerville', serif;
 }
 
 /* Ícono de hamburguesa (tres barras) */
@@ -210,11 +200,24 @@ footer {
 }
 
 /* Media queries para ajustar el diseño */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
     .navbar {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-between;
-        gap: 10px;
+    }
+
+    /* Contenedor del logo y menú */
+    .left-side {
+        flex-grow: 1;
+        justify-content: space-between;
+        width: auto;
+    }
+
+    /* Ajustar el logo en móviles */
+    .logo {
+        font-size: 1.8rem; /* Reducimos el tamaño del logo */
+        white-space: normal; /* Permitir salto de línea si es necesario */
+        text-align: center;
     }
 
     .nav-links {
@@ -222,7 +225,6 @@ footer {
         top: 60px;
         left: 0;
         width: 100%;
-        height: 100vh;
         background-color: #222;
         display: flex;
         flex-direction: column;
@@ -236,16 +238,19 @@ footer {
         transform: translateX(0);
     }
 
+    /* Mostrar icono de menú en pantallas pequeñas */
     .menu-icon {
         display: flex;
     }
 
+    /* Asegurar que el menú sea legible */
     .nav-links li a {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        padding: 10px;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero p {
