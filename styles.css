@@ -234,7 +234,9 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
 }
-
+.more-content {
+    display: none; /* Oculta el contenido extra por defecto */
+}
 footer {
     text-align: center;
     margin-top: 20px;
