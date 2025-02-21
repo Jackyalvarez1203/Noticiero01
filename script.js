@@ -4,7 +4,7 @@ function toggleMenu() {
 }
 function toggleContent(button) {
     // Obtener el contenedor de contenido completo
-    var moreContent = button.previousElementSibling.querySelector('.more-content');
+    var moreContent = button.closest('.news-item').querySelector('.more-content');
 
     // Comprobar si el contenido está oculto
     if (moreContent.style.display === "none" || moreContent.style.display === "") {
@@ -17,4 +17,3 @@ function toggleContent(button) {
         button.textContent = "Leer más";
     }
 }
-
