@@ -234,8 +234,18 @@ body {
     font-weight: bold;
     margin-bottom: 10px;
 }
+.news-item .more-content {
+    display: none; /* El contenido completo estará oculto inicialmente */
+}
+
+/* Estilo para el contenido adicional (inicialmente oculto) */
 .more-content {
-    display: none; /* Oculta el contenido extra por defecto */
+    display: none;
+}
+
+/* Estilo cuando el contenido adicional es visible */
+.read-more.active + .more-content {
+    display: block;
 }
 footer {
     text-align: center;

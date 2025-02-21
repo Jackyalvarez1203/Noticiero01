@@ -3,12 +3,18 @@ function toggleMenu() {
     navLinks.classList.toggle('active');
 }
 function toggleContent(button) {
-    var content = button.previousElementSibling.querySelector('.more-content');
-    if (content.style.display === "none") {
-        content.style.display = "block"; // Muestra el contenido
-        button.textContent = "Leer menos"; // Cambia el texto a "Leer menos"
+    // Obtener el contenedor de contenido completo
+    var moreContent = button.previousElementSibling.querySelector('.more-content');
+
+    // Comprobar si el contenido está oculto
+    if (moreContent.style.display === "none" || moreContent.style.display === "") {
+        // Mostrar el contenido completo y cambiar el texto del botón
+        moreContent.style.display = "block";
+        button.textContent = "Leer menos";
     } else {
-        content.style.display = "none"; // Oculta el contenido
-        button.textContent = "Leer más"; // Cambia el texto a "Leer más"
+        // Ocultar el contenido completo y cambiar el texto del botón
+        moreContent.style.display = "none";
+        button.textContent = "Leer más";
     }
 }
+
