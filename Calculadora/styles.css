@@ -1,0 +1,270 @@
+/* Estilos generales */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    font-size: 16px;
+}
+
+/* Contenedor principal */
+.container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Aumentamos el ancho para acomodar el gráfico */
+    text-align: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 123, 255, 0.1);
+}
+
+/* Título con ícono */
+h1 {
+    font-size: clamp(22px, 5.5vw, 30px);
+    margin-bottom: 25px;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon {
+    font-size: 1.5em;
+}
+
+/* Estilos para inputs, selects y botones */
+select, input, button {
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: clamp(15px, 2.5vw, 17px);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* Estilo para inputs y selects */
+select, input {
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Tooltips */
+label {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+label .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    font-size: 14px;
+}
+
+label:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Estilo para el grupo de botones */
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+button {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    flex: 1;
+}
+
+button#clear {
+    background-color: #dc3545;
+}
+
+button#clear:hover:not(:disabled) {
+    background-color: #c82333;
+}
+
+button:hover:not(:disabled) {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Sección de inputs */
+.input-section {
+    margin-top: 25px;
+}
+
+/* Estilo para el resultado */
+.result {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: clamp(15px, 2.5vw, 17px);
+    color: #1a3c34;
+    background-color: #e7f3ef;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #d1e7dd;
+}
+
+/* Contenedor del gráfico */
+.chart-container {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+}
+
+/* Media query para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: clamp(20px, 5vw, 26px);
+    }
+
+    select, input, button {
+        padding: 10px;
+        font-size: clamp(14px, 2.3vw, 16px);
+    }
+
+    .input-section {
+        margin-top: 20px;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: clamp(14px, 2.3vw, 16px);
+    }
+
+    .chart-container {
+        height: 250px;
+    }
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    h1 {
+        font-size: clamp(18px, 4.5vw, 22px);
+    }
+
+    select, input, button {
+        padding: 8px;
+        margin: 8px 0;
+        font-size: clamp(13px, 2.2vw, 15px);
+        border-radius: 6px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    button {
+        padding: 10px;
+    }
+
+    .input-section {
+        margin-top: 15px;
+    }
+
+    .result {
+        margin-top: 15px;
+        font-size: clamp(13px, 2.2vw, 15px);
+        padding: 8px;
+    }
+
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* Para pantallas muy pequeñas (menores a 320px) */
+@media (max-width: 320px) {
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+
+    select, input, button {
+        padding: 6px;
+        font-size: clamp(12px, 2vw, 14px);
+    }
+
+    .result {
+        font-size: clamp(12px, 2vw, 14px);
+        padding: 6px;
+    }
+
+    .chart-container {
+        height: 180px;
+    }
+}

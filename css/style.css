@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+* {
+    font-family: 'Poppins', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: azure;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.botones {
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+    margin: 10px;
+}
+
+.botones a {
+    background-color: #0a2be9;
+    padding: 9px 18px;
+    border-radius: 80px;
+    text-decoration: none;
+    display: inline-block;
+    color: azure;
+}
+
+.botones a:focus {
+    background-color: rgb(50, 194, 194);
+}
+
+.greetings {
+    font-size: 7rem;
+    font-weight: 900;
+    text-align: center;
+}
+
+.greetings > span {
+    animation: glow 2.5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90% {
+        color: #111;
+        text-shadow: none;
+    }
+}
+
+.greetings > span:nth-child(2) { animation-delay: .2s; }
+.greetings > span:nth-child(3) { animation-delay: .4s; }
+.greetings > span:nth-child(4) { animation-delay: .6s; }
+.greetings > span:nth-child(5) { animation-delay: .8s; }
+.greetings > span:nth-child(6) { animation-delay: 1s; }
+
+.description {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.button a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+@media screen and (max-width: 574px) {
+    .greetings {
+        font-size: 3rem;  /* Reducido de 4rem a 3rem para mejor proporción */
+        font-weight: 900;
+        line-height: 1.2;
+    }
+    
+    .description {
+        font-size: 1.2rem;  /* Reducido de 2rem a 1.2rem */
+        margin-bottom: 15px;
+    }
+    
+    .botones {
+        padding: 6px;
+        margin: 5px;
+    }
+    
+    .botones a {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}

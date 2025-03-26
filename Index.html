@@ -1,81 +1,542 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gossip News</title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="img/Prueba.png">
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Tisa:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet"> 
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Vida como Programador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-    </head>
-     
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Modo Oscuro */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            transition: background 0.3s;
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+        }
+
+        nav .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6f61;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff6f61;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: #ff6f61;
+            position: relative;
+        }
+
+        body.dark-mode .projects-section h2 {
+            color: #ff6f61;
+        }
+
+        .projects-section h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #ff6f61;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        body.dark-mode .project-card {
+            background-color: #2a2a2a;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        body.dark-mode .project-card:hover {
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+        }
+
+        .project-card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .project-card-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        body.dark-mode .project-card-content h3 {
+            color: #e0e0e0;
+        }
+
+        .project-card-content p {
+            color: #777;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            text-align: left;
+        }
+
+        body.dark-mode .project-card-content p {
+            color: #b0b0b0;
+        }
+
+        .project-card-content a {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #ff6f61;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .project-card-content a:hover {
+            background: #e65b50;
+        }
+
+        .icon {
+            margin-right: 8px;
+            color: #ff6f61;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #222;
+            color: white;
+            margin-top: 50px;
+        }
+
+        body.dark-mode footer {
+            background-color: #111;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                height: 50vh;
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+                max-width: 90%;
+            }
+
+            header p {
+                font-size: 1rem;
+                max-width: 90%;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            nav .logo {
+                font-size: 1.4rem;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 0;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li a {
+                font-size: 1.2rem;
+            }
+
+            .projects-section {
+                padding: 50px 15px;
+            }
+
+            .projects-section h2 {
+                font-size: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-card-content {
+                padding: 20px;
+            }
+
+            .project-card-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .project-card-content p {
+                font-size: 0.9rem;
+            }
+
+            .project-card-content a {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                height: 40vh;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+                max-width: 85%;
+            }
+
+            header p {
+                font-size: 0.9rem;
+                max-width: 85%;
+            }
+
+            nav .logo {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                top: 50px;
+            }
+
+            .projects-section h2 {
+                font-size: 1.6rem;
+            }
+
+            .project-card-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .project-card-content p {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
 <body>
 
-<nav class="navbar">
+    <nav>
+        <div class="logo">PROGRAMADOR</div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul id="nav-menu">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#my-projects">Proyectos</a></li>
+            <li><a href="#projects">Secciones</a></li>
+            <li>
+                <button class="theme-toggle" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </li>
+        </ul>
+    </nav>
 
-    <img src="img/Prueba.png" class="icono"> </img>
-    <div class="logo">Gossip News</div>
+    <header>
+        <h1>La Vida como Programador</h1>
+        <p>Descubre cómo un programador puede transformar el mundo a través del código, satisfacer necesidades humanas, generar impacto social y económico, y crecer profesionalmente en un entorno dinámico y lleno de oportunidades.</p>
+    </header>
 
-    <div class="menu-icon" onclick="toggleMenu()">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-    </div>
-    <ul class="nav-links">
-    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-    <li><a href="GossipNews.html"><i class="fas fa-globe"></i>Editorial</a></li>
-    <li><a href="GossipNews01.html"><i class="fas fa-landmark"></i> Política</a></li>
-    <li><a href="GossipNews02.html"><i class="fas fa-futbol"></i> Deportes</a></li>
-    <li><a href="GossipNews03.html"><i class="fas fa-phone-alt"></i> Contacto</a></li>
-</ul>
-</nav>
-
-    <main>
-        <section class="hero">
-            <h1>Últimas Noticias</h1>
-            <p>“El chisme es nuestro mejor amigo”</p>
-        </section>
-
-        <article class="featured">
-            <img src="Img/noti.jpg" alt="Imagen destacada">
-            <h2>La Ideología de la Prensa</h2>
-            <p>Fecha de publicación: 12 de marzo de 2025</p>
-            <p>En la era de la información, los medios de comunicación juegan un papel fundamental en la construcción de nuestra percepción del mundo. A diario, estamos expuestos a una avalancha de noticias, reportajes y análisis provenientes de diferentes fuentes, desde periódicos y noticieros televisivos hasta redes sociales y plataformas digitales</p>
-            <a href="GossipNews.html" class="read-more">Leer más</a>
-        </article>
-
-        <section class="news-grid">
-            <div class="news-item">
-                <img src=".//Img/noty.jpg" alt="Noticia 1">
-                <h3>"La Influencia Ideológica"</h3>
-                <p>Los medios de comunicación desempeñan un rol fundamental como transmisores de la ideología dominante dentro de una sociedad, funcionando como canales que no solo informan, sino que también moldean percepciones, valores y actitudes del público.</p>
-                <a href="GossipNews.html" class="read-more">Leer más</a>
+    <section class="projects-section" id="my-projects">
+        <h2>Mis Proyectos como Programador</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-calculator icon"></i>Calculadora Física</h3>
+                    <p>Desarrollé una herramienta web para resolver problemas de física de manera rápida y sencilla, ideal para estudiantes. Utilicé JavaScript para los cálculos y CSS para un diseño limpio y funcional.</p>
+                    <a href="./Calculadora/Calculadora-fisica.html">Ver Proyecto</a>
+                </div>
             </div>
-            <div class="news-item">
-                <img src=".//Img/Notii.jpg" alt="Noticia 2">
-                <h3>"interpretar las noticias"</h3>
-                <p>Para desentrañar la influencia ideológica de los medios y comprender cómo estos construyen su narrativa, es crucial adoptar un enfoque analítico y prestar atención a diversos elementos que, aunque a veces sutiles, revelan las intenciones y posturas del medio</p>
-                <a href="GossipNews.html" class="read-more">Leer más</a>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-flower icon"></i>Flores Amarillas</h3>
+                    <p>Creé una animación interactiva de flores amarillas como un regalo digital. Usé HTML5 Canvas y JavaScript para las animaciones, dando un toque especial y personalizado.</p>
+                    <a href="Proyectoflores.html">Ver Proyecto</a>
+                </div>
             </div>
-        </section>
-    </main>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-heart icon"></i>Corazón</h3>
+                    <p>Programé una representación de un corazón en forma de cardiografía como un regalo digital. Utilicé SVG y JavaScript para animar el latido, creando un efecto visual emotivo.</p>
+                    <a href="./Corazon/Corazon.html">Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-envelope icon"></i>Carta Interactiva</h3>
+                    <p>Desarrollé una carta digital que, al interactuar, inicia una cuenta regresiva y descarga un archivo al finalizar. Usé JavaScript para la lógica y CSS para un diseño elegante.</p>
+                    <a href="./Cumple/Index.html">Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fab fa-instagram icon"></i>Post Privado Estilo Instagram</h3>
+                    <p>Creé una web que simula un post privado de Instagram, ideal para compartir momentos especiales con una pareja. Utilicé React para la interactividad y Firebase para gestionar el acceso privado.</p>
+                    <a href="./Primermes/Pagina.html">Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <h2>Aspectos de la Programación</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-heartbeat icon"></i>Necesidades Humanas que Satisfago</h3>
+                    <p>Como programador, cubro necesidades básicas como alimentación y vivienda al generar ingresos. También aporto seguridad financiera con un trabajo estable, fomento conexiones sociales al crear apps de comunicación, y logro autorrealización al resolver problemas complejos e innovar en tecnología.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-hand-holding-heart icon"></i>Beneficios Sociales, Económicos y de Formación</h3>
+                    <p>Contribuyo a la sociedad desarrollando tecnologías que mejoran la vida (apps de salud, educación, transporte). Económicamente, puedo ganar entre $15,000 y $120,000 al año dependiendo del país y experiencia. Además, la programación me permite aprender constantemente, desarrollar pensamiento lógico y trabajar en equipo.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-building icon"></i>¿Dónde Puedo Trabajar?</h3>
+                    <p>Puedo desempeñarme en empresas tecnológicas como Google o Microsoft, startups, o incluso en sectores no tecnológicos como bancos, hospitales y gobiernos. También tengo la opción de trabajar como freelance o en proyectos de código abierto que beneficien a comunidades globales.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-users icon"></i>Profesiones Relacionadas</h3>
+                    <p>Mi profesión está conectada con carreras como ingeniería de software, ciencia de datos, diseño UX/UI, ciberseguridad, inteligencia artificial y desarrollo de videojuegos. También se relaciona con áreas como la gestión de proyectos tecnológicos y la educación en tecnología.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-coins icon"></i>Costos de Ser Programador</h3>
+                    <p>Formarme requiere tiempo y dinero: cursos, certificaciones o una carrera universitaria pueden costar entre $1,000 y $20,000. En Colombia, una carrera en una universidad privada como la Universidad de los Andes puede costar alrededor de 20 millones de COP por semestre (aproximadamente $5,000 USD). Además, debo invertir en equipo (computadora, software) y dedicar tiempo a aprender constantemente. Socialmente, puedo enfrentar estrés o largas horas de trabajo.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-star icon"></i>Talentos y Aptitudes Necesarias</h3>
+                    <p>Para destacar, necesito habilidades como pensamiento lógico, resolución de problemas, creatividad y atención al detalle. También es clave ser autodidacta, tener paciencia, trabajar bien en equipo y estar dispuesto a adaptarme a nuevas tecnologías y desafíos.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-university icon"></i>¿Dónde Estudiar Programación en Colombia?</h3>
+                    <p>Puedo estudiar en universidades reconocidas como la Universidad de los Andes (Bogotá), Universidad Nacional de Colombia (Bogotá), Universidad del Valle (Cali), Universidad de Caldas (Manizales) y Universidad de La Sabana (Chía). Estas instituciones ofrecen programas de Ingeniería de Sistemas, Ciencias de la Computación o Ingeniería de Software con un enfoque fuerte en programación.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-clock icon"></i>Duración de la Carrera</h3>
+                    <p>Una carrera de programación, como Ingeniería de Sistemas o Ciencias de la Computación, suele durar entre 4 y 5 años (8 a 10 semestres) en Colombia, dependiendo de la universidad y el plan de estudios. Si opto por un programa técnico o tecnológico, puede durar entre 2 y 3 años.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-card-content">
+                    <h3><i class="fas fa-graduation-cap icon"></i>Puntaje ICFES para Becas</h3>
+                    <p>En Colombia, para acceder a becas como Generación E, necesito un puntaje igual o superior a 349 en las pruebas Saber 11 (ICFES). Para becas más competitivas, como la distinción Andrés Bello (para los 50 mejores puntajes del país), se requiere un puntaje superior a 370. Universidades como la Universidad Nacional también exigen un puntaje mínimo de 500 para ingreso, aunque puede variar según la sede y la demanda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2025 Gossip News. Todos los derechos reservados.</p>
+        <p>© 2025 Mi Vida como Programador | Hecho con <i class="fas fa-heart" style="color: #ff6f61;"></i> por <a href="#contact">Jack</a></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Toggle Menu for Mobile
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Add Scrolled Class to Nav on Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Toggle Theme (Dark/Light Mode)
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.querySelector('.theme-toggle i');
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+            // Guardar preferencia en localStorage
+            localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+
+        // Cargar tema guardado al iniciar
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const themeIcon = document.querySelector('.theme-toggle i');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        });
+    </script>
 </body>
 </html>

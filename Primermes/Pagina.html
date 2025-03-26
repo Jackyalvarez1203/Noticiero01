@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Pagina.css">
+    <link rel="stylesheet" href="Paginaa.css">
+    <title>😻Nuestra linda relación😻</title>
+  
+</head>
+<body>
+    <div id="posts-container"></div>
+    <!-- Popup de compartir -->
+    <div id="sharePopup">
+        <div class="share-popup-content">
+            <button class="close-popup" onclick="closeSharePopup()">×</button>
+            <h3>Compartir página <br>😻Nuestra Linda relación😻</h3>
+            <div>
+                <a id="share-whatsapp" href="#" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a id="share-facebook" href="#" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a id="share-twitter" href="#" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a id="share-instagram" href="#" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+            <!-- Botón de redirigir agregado debajo de los iconos -->
+            <button class="redirect-button" onclick="redirectPage()">Siguiente pagina :3</button>
+        </div>
+    </div>
+<script>
+    // Obtener el usuario logueado desde localStorage
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    const posts = [
+    {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [
+                { type: "image", url: "../img/12102024.png" },
+                { type: "video", url: "../videos/video.mp4" },
+                { type: "audio", url: "../audios/audio.mp3" }
+            ],
+            caption: "Este es uno de los primeros recuerdos de cuando íbamos a volver a empezar nuestra linda relación a pesar de que ha sido un poco jodido el estar alejado uno del otro se ha logrado <3",
+            link: ""  // Enlace del post específico
+        }, 
+       {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/M.jpg" }],
+            caption: "Aquí hace presencia una de las muchas fotos de un niño muy lindo llamado Marcos, a pesar de que él diga que no es lindo o muchas cosas más eso no es así, él es muy lindo",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/A.jpg" }],
+            caption: "Sé que el hecho de estar detrás de una pantalla pues es muy jodido, el no poder abrazar o besar a esa persona pero el tan solo ver sus lindas fotos me hacen muy feliz :D",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/R.jpg" }],
+            caption: "Amo esos ojitos hermosos, amo el solo hecho de que este chico exista, él se ha convertido en alguien muy especial para mí en tan poco tiempo",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/O.jpg" }],
+            caption: "Agradecer al de arriba si nos escucha y está allí, por el hecho de que este niño tan lindo sea mi pareja <3",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/S.jpg" }],
+            caption: "❤‍🩹",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/E.jpg" }],
+            caption: "😻😻😻",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/Ajedrez.jpg" }],
+            caption: "Amo el hecho de jugar ajedrez aunque casi siempre gano (pero él ha demostrado que a pesar de que pierda, le gusta jugar conmigo aunque solo sea un jueguito donde yo tenga experiencia XD)",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/Dots2.jpg" }],
+            caption: "Los lindos recuerdos que llevamos en Dots son lo mejor, también el hecho de que si me encuentro mal, pues poder ver su linda carita <3",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/Llamada.jpg" }],
+            caption: "El hecho de hacer llamadas es muy lindo al escuchar su voz aunque a veces no sepamos ni qué decir (y hasta llegarme a quedar dormido y sentirme acompañado a través de una pantalla)",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/Mundito.jpg" }],
+            caption: "Jugando munditos donde morimos mucho jsjsjs",
+            link: "" 
+        },
+        {
+            username: "Jack <3",
+            userHandle: "@Jack_morning_star_",
+            avatar: "../img/perfil.jpg",
+            media: [{ type: "image", url: "../img/Llamada2.jpg" }],
+            caption: "Amo los dias que hacemos llamada aunque me quede dormido a la mitad de ella <br> Amo que escuches todas las pendejadas que digo🥹 <br> Amo cada minuto donde hablo contigo, donde escucho tu linda voz, amo todo de ti <3",
+            link: "" 
+        },
+        {
+    username: "Jack <3",
+    userHandle: "@Jack_morning_star_",
+    avatar: "../img/perfil.jpg",
+    media: [
+        { type: "image", url: "../img/J.jpg" },
+        { type: "image", url: "../img/K.jpg" }
+    ],
+    caption: "Amo esos lindos mensajes que me dejas antes de despertarme, amo el hecho de que pienses en mi, como ya he dicho se que es dificil el hecho de estar alejado uno del otro pero se que los dos lograremos llevar mas alla de una pantalla nuestra linda relación <3",
+    link: ""
+},
+        {
+    username: "Jack <3",
+    userHandle: "@Jack_morning_star_",
+    avatar: "../img/perfil.jpg",
+    media: [
+        { type: "image", url: "../img/12.png" },
+    ],
+    caption: "Mira ;3",
+    link: ""}
+    ];
+
+    let touchTimeout = null;
+
+    function createPost(post, index) {
+    const mediaItems = post.media.map((item, i) => {
+        if (item.type === 'image') {
+            return `
+                <img src="${item.url}" class="media-item ${i === 0 ? 'active' : ''}" alt="Post Image" onclick="navigateCarousel(${index}, event)" ontouchstart="navigateCarousel(${index}, event)">
+            `;
+        }
+        if (item.type === 'audio') {
+            return `
+                <audio class="media-item ${i === 0 ? 'active' : ''}" controls onclick="navigateCarousel(${index}, event)" ontouchstart="navigateCarousel(${index}, event)">
+                    <source src="${item.url}" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+            `;
+        }
+        if (item.type === 'video') {
+            return `
+                <video class="media-item ${i === 0 ? 'active' : ''}" controls onclick="navigateCarousel(${index}, event)" ontouchstart="navigateCarousel(${index}, event)">
+                    <source src="${item.url}" type="video/mp4">
+                    Your browser does not support the video element.
+                </video>
+            `;
+        }
+    }).join('');
+
+
+        return `
+            <div class="post" id="post-${index}">
+                <div class="header">
+                    <img src="${post.avatar}" alt="Avatar">
+                    <div class="user-info">
+                        <p><strong>${post.username}</strong></p>
+                        <p>${post.userHandle}</p>
+                    </div>
+                </div>
+                <div class="media-carousel" id="carousel-${index}">
+                    ${mediaItems}
+                </div>
+                <div class="post-actions">
+                    <button class="like-button" onclick="likePost(this)">❤</button>
+                    <button class="comment-button" onclick="toggleComments(${index})">💬</button>
+                    <button class="share-button" onclick="openSharePopup('${post.link}')">↪</button>
+                </div>
+                <div class="caption">
+                    <p><strong>${post.userHandle}</strong> ${post.caption}</p>
+                </div>
+                <div class="comments" id="comments-${index}" style="display: none;">
+                    <input type="text" placeholder="Escribe un comentario..." id="comment-input-${index}" onkeydown="handleCommentKeydown(event, ${index})">
+                    <div class="comment-list" id="comment-list-${index}"></div>
+                </div>
+            </div>
+        `;
+    }
+       
+    function openSharePopup(link) {
+        const sharePopup = document.getElementById('sharePopup');
+        sharePopup.style.display = 'flex';
+
+        document.getElementById('share-whatsapp').href = `https://wa.me/?text=${encodeURIComponent(link)}`;
+        document.getElementById('share-facebook').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}`;
+        document.getElementById('share-twitter').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(link)}`;
+        document.getElementById('share-instagram').href = `https://www.instagram.com/`;
+    }
+
+    function closeSharePopup() {
+        document.getElementById('sharePopup').style.display = 'none';
+    }
+
+    function likePost(button) {
+        button.classList.toggle('liked');
+    }
+
+    function toggleComments(index) {
+        const commentsSection = document.getElementById(`comments-${index}`);
+        commentsSection.style.display = commentsSection.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function handleCommentKeydown(event, index) {
+        if (event.key === 'Enter') {
+            const commentText = document.getElementById(`comment-input-${index}`).value;
+            if (commentText) {
+                const commentList = document.getElementById(`comment-list-${index}`);
+                commentList.innerHTML += `<div class="comment"><p>${commentText}</p></div>`;
+                document.getElementById(`comment-input-${index}`).value = '';
+            }
+        }
+    }
+
+    let cooldown = false; // Variable para controlar el cooldown
+
+function navigateCarousel(index, event) {
+    // Si el cooldown está activo, no hacer nada
+    if (cooldown) return;
+
+    clearTimeout(touchTimeout);
+
+    touchTimeout = setTimeout(() => {
+        const carousel = document.getElementById(`carousel-${index}`);
+        const activeItem = carousel.querySelector('.active');
+        let nextItem = activeItem.nextElementSibling;
+
+        // Si es el último elemento, regresa al primero
+        if (!nextItem) {
+            nextItem = carousel.firstElementChild;
+        }
+
+        // Elimina la clase 'active' del actual y añade al siguiente
+        activeItem.classList.remove('active');
+        nextItem.classList.add('active');
+
+        // Activar el cooldown para evitar otra navegación inmediatamente
+        cooldown = true;
+
+        // Reiniciar el cooldown después de 3 segundos (3000 ms)
+        setTimeout(() => {
+            cooldown = false;
+        }, 100);
+    }, 50); // El temporizador de 100 ms sigue existiendo para el comportamiento de la animación
+}
+   // Función para redirigir al siguiente enlace
+   function redirectPage() {
+        window.location.href = 'Corazon.html';  // Redirige a la página que desees
+    }
+
+// Generar los posts en la página
+const postsContainer = document.getElementById('posts-container');
+posts.forEach((post, index) => {
+    postsContainer.innerHTML += createPost(post, index);
+});
+</script>
+</body>
+</html>

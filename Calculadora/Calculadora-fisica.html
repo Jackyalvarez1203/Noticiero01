@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Física</title>
+    <link rel="stylesheet" href="../Calculadora/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>
+            <span class="icon"></span> Calculadora de Física
+        </h1>
+        <label for="category">Selecciona una categoría:</label>
+        <select id="category" onchange="updateSubcategories(); showInputs();">
+            <option value="">Selecciona una categoría</option>
+            <option value="cinematica">Cinemática</option>
+            <option value="dinamica">Dinámica</option>
+            <option value="energia">Energía</option>
+            <option value="conversiones">Conversiones de Unidades</option>
+            <option value="temperatura">Temperatura</option>
+            <option value="momento">Momento y Colisiones</option>
+            <option value="gravedad">Gravedad</option>
+            <option value="electricidad">Electricidad</option>
+            <option value="ondas">Ondas</option>
+            <option value="termodinamica">Termodinámica</option>
+        </select>
+
+        <label for="subcategory">Selecciona un subtema:</label>
+        <select id="subcategory" onchange="showInputs();">
+            <option value="">Selecciona un subtema</option>
+        </select>
+
+        <div class="input-section" id="inputs"></div>
+
+        <div class="button-group">
+            <button id="calculate" onclick="calculate()" disabled>Calcular</button>
+            <button id="clear" onclick="clearForm()">Limpiar</button>
+        </div>
+
+        <div class="result" id="result"></div>
+        <canvas id="physicsChart" style="max-height: 400px; max-width: 600px;"></canvas>
+        
+        <div class="chart-container">
+            <canvas id="physicsChart"></canvas>
+        </div>
+    </div>
+    <script src="../Calculadora/script.js"></script>
+</body>
+</html>
